@@ -1,14 +1,14 @@
 package com.tecnorth.helpdesk.domain.enums;
 
-public enum Status {
+public enum Priority {
 
-    OPEN( 0, "ROLE_ADMIN" ), PROGRESS( 1, "ROLE_PROGRESS" ), CLOSED( 2, "ROLE_CLOSED" );
+    LOW( 0, "ROLE_LOW" ), MEDIUM( 1, "ROLE_MEDIUM" ), HIGH( 2, "ROLE_HIGH" );
 
 
     private Integer code;
     private String description;
 
-    Status(Integer code, String description) {
+    Priority(Integer code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -21,11 +21,11 @@ public enum Status {
         return description;
     }
 
-    public static Status toEnum(Integer cod) {
+    public static Priority toEnum(Integer cod) {
         if (cod == null) {
             return null;
         }
-        for (Status x : Status.values()) {
+        for (Priority x : Priority.values()) {
             if (cod.equals( x.getCode() )) {
                 return x;
             }

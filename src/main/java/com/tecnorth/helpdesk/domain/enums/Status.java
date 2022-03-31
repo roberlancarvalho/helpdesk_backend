@@ -1,14 +1,14 @@
 package com.tecnorth.helpdesk.domain.enums;
 
-public enum Profile {
+public enum Status {
 
-    ADMIN( 0, "ROLE_ADMIN" ), CLIENT( 1, "ROLE_CLIENT" ), TECHNICIAN( 2, "ROLE_TECHNICIAN" );
+    OPEN( 0, "ROLE_OPEN" ), PROGRESS( 1, "ROLE_PROGRESS" ), CLOSED( 2, "ROLE_CLOSED" );
 
 
     private Integer code;
     private String description;
 
-    Profile(Integer code, String description) {
+    Status(Integer code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -21,11 +21,11 @@ public enum Profile {
         return description;
     }
 
-    public static Profile toEnum(Integer cod) {
+    public static Status toEnum(Integer cod) {
         if (cod == null) {
             return null;
         }
-        for (Profile x : Profile.values()) {
+        for (Status x : Status.values()) {
             if (cod.equals( x.getCode() )) {
                 return x;
             }
